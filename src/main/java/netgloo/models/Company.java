@@ -21,6 +21,116 @@ public class Company implements Serializable {
     @NotNull
     private String company_name;
 
+    private boolean is_trusted;
+
+    public boolean getIsTrusted() {
+        return is_trusted;
+    }
+
+    public void setIsTrusted(boolean is_trusted) {
+        this.is_trusted = is_trusted;
+    }
+
+    private int net_income;
+
+    private int sales;
+
+    private double profit_margin;
+
+    private int average_stockholder_equity;
+
+    private double return_on_equity;
+
+    private double return_on_assets;
+
+    public double getReturn_on_assets() {
+        return return_on_assets;
+    }
+
+    public void setReturn_on_assets(double return_on_assets) {
+        this.return_on_assets = return_on_assets;
+    }
+
+    private double current_ratio;
+
+    private int inventory;
+
+    private double quick_ratio;
+
+    private int average_total_assets;
+
+    public int getAverage_total_assets() {
+        return average_total_assets;
+    }
+
+    public void setAverage_total_assets(int average_total_assets) {
+        this.average_total_assets = average_total_assets;
+    }
+
+    public int getNet_income() {
+        return net_income;
+    }
+
+    public void setNet_income(int net_income) {
+        this.net_income = net_income;
+    }
+
+    public int getSales() {
+        return sales;
+    }
+
+    public void setSales(int sales) {
+        this.sales = sales;
+    }
+
+    public double getProfit_margin() {
+        return profit_margin;
+    }
+
+    public void setProfit_margin(double profit_margin) {
+        this.profit_margin = profit_margin;
+    }
+
+    public int getAverage_stockholder_equity() {
+        return average_stockholder_equity;
+    }
+
+    public void setAverage_stockholder_equity(int average_stockholder_equity) {
+        this.average_stockholder_equity = average_stockholder_equity;
+    }
+
+    public double getReturn_on_equity() {
+        return return_on_equity;
+    }
+
+    public void setReturn_on_equity(double return_on_equity) {
+        this.return_on_equity = return_on_equity;
+    }
+
+    public double getCurrent_ratio() {
+        return current_ratio;
+    }
+
+    public void setCurrent_ratio(double current_ratio) {
+        this.current_ratio = current_ratio;
+    }
+
+    public int getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(int inventory) {
+        this.inventory = inventory;
+    }
+
+    public double getQuick_ratio() {
+        return quick_ratio;
+    }
+
+    public void setQuick_ratio(double quick_ratio) {
+        this.quick_ratio = quick_ratio;
+    }
+
     public String getCompany_name() {
         return company_name;
     }
@@ -159,13 +269,8 @@ public class Company implements Serializable {
 
     private int gross_margin;
 
-
-
-
-    @NotNull
     private boolean authFlag;
 
-    @NotNull
     private boolean infoFlag;
 
     private String legal_person;

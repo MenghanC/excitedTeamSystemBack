@@ -39,7 +39,21 @@ public class CompanyController {
         company.setRevenue(Integer.parseInt(data.get("revenue")));
         company.setSector(data.get("sector"));
         company.setSize(data.get("size"));
+        company.setNet_income(Integer.parseInt(data.get("net_income")));
+        company.setInventory(Integer.parseInt(data.get("inventory")));
 
+        company.setProfit_margin(company.getNet_income() / company.getSales());
+        company.setReturn_on_assets(company.getNet_income() / company.getAverage_total_assets());
+        company.setReturn_on_equity(company.getNet_income() / company.getAverage_stockholder_equity());
+
+        company.setCurrent_ratio(company.getAsset() / company.getLiability());
+        company.setQuick_ratio((company.getAsset() - company.getInventory()) / company.getLiability());
+
+        company.setSales(Integer.parseInt(data.get("sales")));
+        company.setAverage_total_assets(Integer.parseInt(data.get("average_total_assets")));
+        company.setAverage_stockholder_equity(Integer.parseInt(data.get("average_stockholder_equity")));
+
+        company.setIsTrusted(false);
         company.setInfoFlag(true);
         company.setAuthFlag(true);
         companyDao.save(company);
