@@ -70,6 +70,15 @@ public class CompanyController {
         companyDao.save(company);
     }
 
+    @ResponseStatus(value = HttpStatus.OK)
+    @RequestMapping(value="/company/create/isTrusted", method = RequestMethod.POST, produces= MediaType.APPLICATION_JSON_VALUE)
+    public void updateIsTrusted(@RequestBody Map<String, String> data) {
+        Company company = companyDao.findById(Integer.parseInt(data.get("id")));
+        company.setIsTrusted(Boolean.parseBoolean(data.get("isTrusted")));
+
+        companyDao.save(company);
+    }
+
     @RequestMapping(method = RequestMethod.GET, value = "/company/get/{id}")
     public ResponseEntity<Map<String, String>> getCompanyInfo(@PathVariable(value = "id") int id) {
         Map<String, String> companyInfoMap = new HashMap<String, String>();
