@@ -131,10 +131,6 @@ public class Company implements Serializable {
         this.quick_ratio = quick_ratio;
     }
 
-    public String getCompany_name() {
-        return company_name;
-    }
-
     public String getRegion() {
         return region;
     }
