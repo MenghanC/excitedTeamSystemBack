@@ -9,9 +9,9 @@ angular.module('urbanApp')
 function candidatesCtrl($scope, $http,$rootScope) {
     $http({
         method: 'GET',
-        url: 'https://api.myjson.com/bins/2obro',
+        url: '/company/getAll',
         headers: {'Content-Type': 'application/json'}
     }).success(function (result) {
-        $scope.candidateList = result.data;
+        $scope.candidateList = result;
     });
 };

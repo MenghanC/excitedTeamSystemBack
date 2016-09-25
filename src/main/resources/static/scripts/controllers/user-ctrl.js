@@ -10,22 +10,9 @@ function userCtrl($scope, $http,$rootScope,$state) {
     $scope.isPending = false;
 
 
-    // $http({
-    //     method: 'GET',
-    //     url: '/company/get/'+ $scope.company_name,
-    //     headers: {'Content-Type': 'application/json'}
-    // }).error(function () {
-    //     console.log("error");
-    //
-    // }).success(function (result) {
-    //
-    //     console.log($scope.infoFlag);
-    //     console.log(result);
-    // });
-
     $scope.register = function() {
         console.log("register");
-        var companyData = { 
+        $rootScope.companyData = { 
             "company_name" : $scope.company_name, 
             "start_date" : $scope.start_date, 
             "description": "",
@@ -53,11 +40,11 @@ function userCtrl($scope, $http,$rootScope,$state) {
         $http({
               method: 'POST', 
               url: '/company/create', 
-              data: companyData, 
+              data: $rootScope.companyData, 
               headers: {'Content-Type': 'application/json'} 
           }).success(function () { 
               console.log("post successfully");
-              $state.go('app.account');
+
               $http({
                   method: 'GET',
                   url: '/company/get/'+ $scope.company_name,
@@ -66,15 +53,9 @@ function userCtrl($scope, $http,$rootScope,$state) {
                    $rootScope.infoFlag = true;
                    console.log($rootScope.infoFlag);
                    console.log(result);
-                  // $scope.companyName = result.companyName;
-                  // $scope.description = result.description;
-                  // $scope.industry = result.industry;
-                  // $scope.isTrusted = result.isTrusted;
-                  // $scope.profitMargin = result.profitMargin;
-                  // $scope.returnOnEquity = result.returnOnEquity;
-                  // $scope.returnOnAssets = result.returnOnAssets;
-                  // $scope.currentRatio = result.companyName;
-                  console.log(companyData);
+                  console.log($rootScope.companyData);
+                  console.log($rootScope.companyData.company_name);
+                  $state.go('app.account');
             });
           });
     }

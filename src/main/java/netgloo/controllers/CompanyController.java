@@ -9,7 +9,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -101,5 +103,36 @@ public class CompanyController {
         return new ResponseEntity<Map<String, String>>(companyInfoMap, HttpStatus.OK);
 
     }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/company/getAll")
+    public ResponseEntity<List<Map<String, String>>> getAllCompanyInfo() {
+
+        Map<String, String> companyInfoMap = null;
+        List<Company> companies = companyDao.findAll();
+        List<Map<String, String>> result = new ArrayList<>();
+
+        for(Company company: companies) {
+            companyInfoMap = new HashMap<String, String>();
+
+            companyInfoMap.put("infoFlag", Boolean.toString(company.getInfoFlag()));
+            companyInfoMap.put("companyName", company.getName());
+            companyInfoMap.put("description", company.getDescription());
+            companyInfoMap.put("industry", company.getIndustry());
+            companyInfoMap.put("isTrusted", Boolean.toString(company.getIsTrusted()));
+            companyInfoMap.put("profitMargin", Double.toString(company.getProfit_margin()));
+            companyInfoMap.put("returnOnEquity", Double.toString(company.getReturn_on_equity()));
+            companyInfoMap.put("returnOnAssets", Double.toString(company.getReturn_on_assets()));
+            companyInfoMap.put("currentRatio", Double.toString(company.getCurrent_ratio()));
+            companyInfoMap.put("quickRatio", Double.toString(company.getQuick_ratio()));
+            companyInfoMap.put("rating", Double.toString(company.getRating()));
+
+
+            result.add(companyInfoMap);
+        }
+        return new ResponseEntity<List<Map<String, String>>>(result, HttpStatus.OK);
+
+    }
+
+
 
 }
