@@ -1,0 +1,84 @@
+<div class="row brand">
+
+  <!-- logo -->
+  <div class="brand-logo">
+    <!--<img data-ng-src="images/rbcLogo.jpg" height="20" alt="">-->
+  </div>
+  <!-- /logo -->
+
+  <!-- toggle small sidebar menu -->
+  <a href="javascript:;" class="toggle-sidebar hidden-xs hamburger-icon v3" data-ng-click="app.layout.isSmallSidebar = !app.layout.isSmallSidebar">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </a>
+  <!-- /toggle small sidebar menu -->
+
+</div>
+
+<!-- main navigation -->
+<nav role="navigation" ng-controller="userCtrl" side-navigation>
+
+  <ul class="nav">
+    <li ui-sref-active="active" ng-hide="infoFlag">
+      <a href="#/getStarted">
+        <i class="fa fa-flask"></i>
+        <span>GetStarted</span>
+      </a>
+    </li>
+
+
+    <li ui-sref-active="active">
+      <a href="#/account">
+        <i class="fa fa-flask"></i>
+        <span>Account</span>
+      </a>
+    </li>
+
+    <li ui-sref-active="active">
+      <a href="#/candidates" ng-if="userType=='investor'">
+        <i class="fa fa-flask"></i>
+        <span>Candidates To Invest</span>
+      </a>
+    </li>
+
+    <li ui-sref-active="active">
+      <a href="#/candidatesToLoan" ng-if="userType=='admin'">
+        <i class="fa fa-flask"></i>
+        <span>Candidates To Loan</span>
+      </a>
+    </li>
+
+
+    <li ui-sref-active="active">
+      <a href="#/loan" ng-if="userType=='client'">
+        <i class="fa fa-flask"></i>
+        <span>LoanStatus</span>
+      </a>
+    </li>
+
+    <li ui-sref-active="active">
+      <a href="#/fund" ng-if="userType=='client'">
+        <i class="fa fa-flask"></i>
+        <span>Investment</span>
+      </a>
+    </li>
+
+    <li ui-sref-active="active">
+      <a href="#/fund" ng-if="userType!='client'">
+        <i class="fa fa-flask"></i>
+        <span>My Investment</span>
+      </a>
+    </li>
+
+    <li ui-sref-active="active">
+      <a href="#/message">
+        <i class="fa fa-flask"></i>
+        <span>Message</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<!-- /main navigation -->

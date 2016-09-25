@@ -160,8 +160,6 @@ public class Company implements Serializable {
     private int gross_margin;
 
 
-
-
     @NotNull
     private boolean authFlag;
 

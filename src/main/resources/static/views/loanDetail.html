@@ -1,0 +1,66 @@
+<div ng-controller="LoanDetailCtrl">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">Loan Summary</div>
+        <div class="panel-body">
+          <div class="no-more-tables">
+            <table class="table table-striped mb0">
+            <thead>
+            <tr>
+              <th>name</th>
+              <th class="numeric">value</th>
+              <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="loanGeneral in loanGeneralList">
+              <td data-title="Name">{{loanGeneral.name}}</td>
+              <td data-title="Value">{{loanGeneral.value}}</td>
+              <td data-title="Action"><button>Edit</button></td>
+            </tr>
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">Scheduled Payment</div>
+        <div class="panel-body">
+          <div class="no-more-tables">
+            <table class="table table-striped mb0">
+                <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Amount</th>
+                  <th>To</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="loanScheduledPayment in loanScheduledPaymentList">
+                  <td data-title="Date">{{loanScheduledPayment.Date}}</td>
+                  <td data-title="Amount">{{loanScheduledPayment.Amount}}</td>
+                  <td data-title="To">{{loanScheduledPayment.To}}</td>
+                  <td data-title="Status">{{loanScheduledPayment.Status}}</td>
+                  <td data-title="Action"><button>Edit</button> <button>Delete</button></td>
+                </tr>
+                </tbody>
+              </table>
+              <button class="btn btn-primary pull-right">Add</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+</div>
