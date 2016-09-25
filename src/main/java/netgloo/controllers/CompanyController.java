@@ -21,11 +21,11 @@ public class CompanyController {
     private CompanyDao companyDao;
 
     @ResponseStatus(value = HttpStatus.OK)
-    @RequestMapping(value="/create/company", method = RequestMethod.POST, produces= MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value="/company/create", method = RequestMethod.POST, produces= MediaType.APPLICATION_JSON_VALUE)
     public void createCompany(@RequestBody Map<String, String> data) {
         Company company = new Company();
         company.setAsset(Integer.parseInt(data.get("asset")));
-        company.setCompanyName(data.get("company_name"));
+        company.setName(data.get("company_name"));
         company.setDescription(data.get("description"));
         company.setStartDate(data.get("start_date"));
         company.setLegalPerson(data.get("legal_person"));
@@ -42,6 +42,9 @@ public class CompanyController {
         company.setSector(data.get("sector"));
         company.setSize(data.get("size"));
         company.setNet_income(Integer.parseInt(data.get("net_income")));
+        company.setSales(Integer.parseInt(data.get("sales")));
+        company.setAverage_total_assets(Integer.parseInt(data.get("average_total_assets")));
+        company.setAverage_stockholder_equity(Integer.parseInt(data.get("average_stockholder_equity")));
         company.setInventory(Integer.parseInt(data.get("inventory")));
 
         company.setProfit_margin(company.getNet_income() / company.getSales());
@@ -79,13 +82,13 @@ public class CompanyController {
         companyDao.save(company);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/company/get/{id}")
-    public ResponseEntity<Map<String, String>> getCompanyInfo(@PathVariable(value = "id") int id) {
+    @RequestMapping(method = RequestMethod.GET, value = "/company/get/{name}")
+    public ResponseEntity<Map<String, String>> getCompanyInfo(@PathVariable(value = "name") String name) {
         Map<String, String> companyInfoMap = new HashMap<String, String>();
 
-        Company company = companyDao.findById(id);
-        companyInfoMap.put("id", Integer.toString(id));
-        companyInfoMap.put("companyName", company.getCompanyName());
+        Company company = companyDao.findByName(name);
+        companyInfoMap.put("infoFlag",  Boolean.toString(company.getInfoFlag()));
+        companyInfoMap.put("companyName", company.getName());
         companyInfoMap.put("description", company.getDescription());
         companyInfoMap.put("industry", company.getIndustry());
         companyInfoMap.put("isTrusted", Boolean.toString(company.getIsTrusted()));

@@ -3,60 +3,37 @@
         <div class="panel-heading">
             Fill in Company information to start
         </div>
-        <form role="form">
-        	<div class="form-group">
-                <input type="text" class="form-control" ng-model="company_name" placeholder="Company Name"/>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" ng-model="start_date" placeholder="Founded Date YYYY/MM/DD"/>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" ng-model="legal_person" placeholder="Legal Person"/>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" ng-model="SIN" placeholder="Legal Person SIN"/>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" ng-model="capital" placeholder="Capital"/>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" ng-model="capital_lasting" placeholder="Time That Capital Lasts"/>
-            </div>
-            <div class="form-group">
-      			<input type="text" class="form-control" ng-model="asset" placeholder="Asset"/>
-    		</div>
-    		<div class="form-group">
-                <input type="text" class="form-control" ng-model="founders" placeholder="Founders"/>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" ng-model="liability" placeholder="Liability"/>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" ng-model="industry" placeholder="Industry"/>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" ng-model="region" placeholder="Region"/>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" ng-model="size" placeholder="Size of your company"/>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" ng-model="revenue" placeholder="Revenue"/>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" ng-model="sector" placeholder="Sector"/>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" ng-model="monthly_burn_rate" placeholder="Monthly Burn Rate"/>
-            </div>
-    		
+        <form>
+        	<input type="text" class="form-control" ng-model="company_name" placeholder="Company Name"/>
+            <input type="text" class="form-control" ng-model="start_date" placeholder="Founded Date YYYY/MM/DD"/>
+            <input type="text" class="form-control" ng-model="legal_person" placeholder="Legal Person"/>
+            <input type="text" class="form-control" ng-model="capital" placeholder="Capital"/>
+            <input type="text" class="form-control" ng-model="capital_lasting" placeholder="Time That Capital Lasts"/>
+            <input type="text" class="form-control" ng-model="asset" placeholder="Asset"/>
+            <input type="text" class="form-control" ng-model="founders" placeholder="Founders"/>
+            <input type="text" class="form-control" ng-model="liability" placeholder="Liability"/>
+            <input type="text" class="form-control" ng-model="industry" placeholder="Industry"/>
+            <input type="text" class="form-control" ng-model="region" placeholder="Region"/>
+            <input type="text" class="form-control" ng-model="size" placeholder="Size of your company"/>
+            <input type="text" class="form-control" ng-model="revenue" placeholder="Revenue"/>
+            <input type="text" class="form-control" ng-model="sector" placeholder="Sector"/>
+            <input type="text" class="form-control" ng-model="gross_margin" placeholder="Gross Margin"/>
+            <input type="text" class="form-control" ng-model="main_business" placeholder="Main Business"/>
+            <input type="text" class="form-control" ng-model="net_income" placeholder="Net Income"/>
+            <input type="text" class="form-control" ng-model="inventory" placeholder="Inventory"/>
+            <input type="text" class="form-control" ng-model="monthly_burn_rate" placeholder="Monthly Burn Rate"/>
+            <input type="text" class="form-control" ng-model="sales" placeholder="Sales"/>
+            <input type="text" class="form-control" ng-model="average_total_assets" placeholder="Average Total Assets"/>
+            <input type="text" class="form-control" ng-model="average_stockholder_equity" placeholder="average_stockholder_equity"/>
 
-    		<div class="alert alert-danger" ng-show="formInfo.error">{{formInfo.error}}</div>
-    			<button
-    			    ng-click="register()">
-      				Register<i ng-show="formInfo.loggingIn" class="fa fa-spinner fa-spin"></i>
-    			</button>
-    		<input type="submit" style="display:none" ng-click="login()"/>
+            <input type="button" ng-click="register()" value="Submit" />
+            <!--<button type="submit" class="btn btn-primary" ng-click="register()">Submit</button>-->
+
+            <!--<button-->
+    			    <!--ng-click="register()">-->
+      				<!--Register<i ng-show="formInfo.loggingIn" class="fa fa-spinner fa-spin"></i>-->
+    			<!--</button>-->
+    		<!--<input type="submit" style="display:none" ng-click="login()"/>-->
   		</form>
     </div>
 </div>

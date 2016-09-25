@@ -18,7 +18,7 @@ function sessionCtrl($scope, $state, $rootScope,AuthenticationService) {
 
         console.log($rootScope.globals.currentUser.username);
         $rootScope.userType = $scope.password;
-
+        $rootScope.infoFlag  = false;
         $state.go('app.message');
         console.log($rootScope.userType);
       } else {

@@ -19,7 +19,7 @@ public class Company implements Serializable {
     private String start_date;
 
     @NotNull
-    private String company_name;
+    private String name;
 
     private boolean is_trusted;
 
@@ -298,8 +298,8 @@ public class Company implements Serializable {
     }
 
 
-    public String getCompanyName() {
-        return company_name;
+    public String getName() {
+        return name;
     }
 
     public boolean getAuthFlag() {
@@ -330,8 +330,8 @@ public class Company implements Serializable {
         this.asset = asset;
     }
 
-    public void setCompanyName(String company_name) {
-        this.company_name = company_name;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setDescription(String description) {
