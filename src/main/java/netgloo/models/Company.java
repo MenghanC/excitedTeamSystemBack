@@ -264,7 +264,7 @@ public class Company implements Serializable {
     private int revenue;
 
     private int gross_margin;
-    
+
     private boolean authFlag;
 
     private boolean infoFlag;
